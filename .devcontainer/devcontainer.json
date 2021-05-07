@@ -14,7 +14,7 @@
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home/php/workspace",
+	"workspaceFolder": "/home/www-data/workspace",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
@@ -31,7 +31,8 @@
 		"bmewburn.vscode-intelephense-client",
 		"junstyle.php-cs-fixer",
 		"dbaeumer.vscode-eslint",
-		"rvest.vs-code-prettier-eslint"
+		"rvest.vs-code-prettier-eslint",
+		"felixfbecker.php-debug"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -47,5 +48,5 @@
 	//"postCreateCommand": "apt-get update && apt-get install -y curl git",
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "php"
+	"remoteUser": "www-data"
 }

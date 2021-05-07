@@ -5,7 +5,8 @@ RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/
 
 RUN apt-get update \
     && apt-get install -y zlib1g-dev libzip-dev mariadb-client git unzip \
-    && docker-php-ext-install zip pdo_mysql
+    && docker-php-ext-install zip pdo_mysql \
+    && pecl install xdebug && docker-php-ext-enable xdebug
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \ 
     && apt-get update \
@@ -14,7 +15,9 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN adduser --disabled-password --gecos '' php
+RUN usermod -u 1000 -o www-data
+WORKDIR /var/www
+RUN chown -R www-data:www-data /var/www
 
-WORKDIR /home/php/workspace
-RUN chown -R php:php /home/php/workspace
+WORKDIR /home/www-data/workspace
+RUN chown -R www-data:www-data /home/www-data/workspace
