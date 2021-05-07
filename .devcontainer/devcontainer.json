@@ -47,7 +47,9 @@
 		"felixfbecker.php-debug",
 		"bmewburn.vscode-intelephense-client",
 		"mehedidracula.php-namespace-resolver",
-		"neilbrayfield.php-docblocker"
+		"neilbrayfield.php-docblocker",
+		"onecentlin.laravel5-snippets",
+		"ryannaddy.laravel-artisan"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
