@@ -22,17 +22,29 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
     	"[javascript]": {
       		"editor.defaultFormatter": "esbenp.prettier-vscode"
-    	}
+    	},
+		//インテリセンス
+		"php.executablePath": "/usr/local/bin/php",
+		//名前解決系
+		"namespaceResolver.exclude": "{**/node_modules/**}",
+		"namespaceResolver.showMessageOnStatusBar": false,  // Show message on status bar instead of notification box
+		"namespaceResolver.autoSort": true,                 // Auto sort after imports
+		"namespaceResolver.sortOnSave": true,              // Auto sort when a file is saved
+		"namespaceResolver.sortAlphabetically": true,      // Sort imports in alphabetical order instead of line length
+		"namespaceResolver.leadingSeparator": true,         // Expand class with leading namespace separator
+		"namespaceResolver.highlightOnSave": false,         // Auto highlight not imported and not used when a file is saved
+		"namespaceResolver.highlightOnOpen": false          // Auto highlight not imported and not used when a file is opened
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"donjayamanne.githistory",
-		"bmewburn.vscode-intelephense-client",
 		"junstyle.php-cs-fixer",
 		"dbaeumer.vscode-eslint",
 		"rvest.vs-code-prettier-eslint",
-		"felixfbecker.php-debug"
+		"felixfbecker.php-debug",
+		"bmewburn.vscode-intelephense-client",
+		"mehedidracula.php-namespace-resolver"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
