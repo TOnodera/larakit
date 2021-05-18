@@ -19,7 +19,6 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
     	"[javascript]": {
       		"editor.defaultFormatter": "esbenp.prettier-vscode"
     	},
@@ -27,7 +26,7 @@
 		"php.executablePath": "/usr/local/bin/php",
 		//名前解決系
 		"namespaceResolver.exclude": "{**/node_modules/**}",
-		"namespaceResolver.showMessageOnStatusBar": false,  // Show message on status bar instead of notification box
+		"namespaceResolver.showMessageOnStatusBar": true,  // Show message on status bar instead of notification box
 		"namespaceResolver.autoSort": true,                 // Auto sort after imports
 		"namespaceResolver.sortOnSave": true,              // Auto sort when a file is saved
 		"namespaceResolver.sortAlphabetically": true,      // Sort imports in alphabetical order instead of line length
