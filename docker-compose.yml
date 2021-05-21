@@ -18,6 +18,8 @@ services:
       - ./:/home/www-data/workspace
     environment:
       - TZ=${TZ}
+    extra_hosts:
+      - "host.docker.internal:192.168.1.7"
 
   db:
     build: ./docker/mysql
