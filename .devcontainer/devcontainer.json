@@ -49,7 +49,8 @@
 		"mehedidracula.php-namespace-resolver",
 		"neilbrayfield.php-docblocker",
 		"onecentlin.laravel5-snippets",
-		"ryannaddy.laravel-artisan"
+		"ryannaddy.laravel-artisan",
+		"humao.rest-client"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

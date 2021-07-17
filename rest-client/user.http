@@ -1,0 +1,4 @@
+GET http://nginx/user/
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6LPDNEAi3HC660XyV6IacrJbfz8Zcu0IkZoxxFHM
