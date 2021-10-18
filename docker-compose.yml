@@ -1,24 +1,12 @@
 version: "3"
 services:
-  nginx:
-    build: ./docker/nginx/
-    ports:
-      - 8080:80
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./laravel:/home/www-data/workspace/laravel
-    depends_on:
-      - php
-    environment:
-      - TZ=${TZ}
 
   php:
     build: ./docker/php
     volumes:
-      - ./:/home/www-data/workspace
+      - ./:/home/www-data/app
     environment:
       - TZ=${TZ}
-
   db:
     build: ./docker/mysql
     volumes:
