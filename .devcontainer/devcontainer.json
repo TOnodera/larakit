@@ -40,7 +40,6 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"donjayamanne.githistory",
 		"junstyle.php-cs-fixer",
 		"dbaeumer.vscode-eslint",
 		"rvest.vs-code-prettier-eslint",
@@ -49,7 +48,8 @@
 		"mehedidracula.php-namespace-resolver",
 		"neilbrayfield.php-docblocker",
 		"onecentlin.laravel5-snippets",
-		"ryannaddy.laravel-artisan"
+		"ryannaddy.laravel-artisan",
+		"mhutchie.git-graph"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
