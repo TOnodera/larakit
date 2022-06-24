@@ -6,7 +6,7 @@ services:
       - 8080:80
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./laravel:/home/www-data/workspace/laravel
+      - ./app/public:/home/www-data/workspace/app/public
     depends_on:
       - php
     environment:
