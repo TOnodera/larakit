@@ -6,9 +6,6 @@ RUN apt-get update \
     && docker-php-ext-install zip pdo_mysql \
     && pecl install xdebug && docker-php-ext-enable xdebug
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \ 
-    && apt-get update \
-    && apt-get install -y nodejs
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.0.13
 COPY --from=composer /usr/bin/composer /usr/bin/composer
