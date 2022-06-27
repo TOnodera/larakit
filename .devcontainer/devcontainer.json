@@ -43,7 +43,8 @@
 	"extensions": [
 		"donjayamanne.githistory",
 		"junstyle.php-cs-fixer",
-		"robberphex.php-debug"
+		"robberphex.php-debug",
+		"calebporzio.better-phpunit"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
