@@ -44,7 +44,8 @@
 		"donjayamanne.githistory",
 		"junstyle.php-cs-fixer",
 		"robberphex.php-debug",
-		"calebporzio.better-phpunit"
+		"calebporzio.better-phpunit",
+		"onecentlin.laravel-blade"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

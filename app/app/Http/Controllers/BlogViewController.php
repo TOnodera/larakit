@@ -12,4 +12,12 @@ class BlogViewController extends Controller
 
         return view('index', compact('blogs'));
     }
+
+    public function show(Blog $blog)
+    {
+        if ($blog->isClosed()) {
+            abort(403);
+        }
+        return view('blog.show', compact('blog'));
+    }
 }

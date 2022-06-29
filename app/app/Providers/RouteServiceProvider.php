@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
@@ -27,6 +26,8 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
+
+        Route::pattern('blog', '[0-9]+');
 
         $this->routes(function () {
             Route::middleware('api')

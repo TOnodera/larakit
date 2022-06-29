@@ -49,4 +49,23 @@ class BlogViewControllerTest extends TestCase
             ->assertSee('ブログB')
             ->assertSee('ブログC');
     }
+
+    /** @test show*/
+    public function ブログの詳細画面が表示できる()
+    {
+        $blog = Blog::factory()->create();
+        $this->get('blogs/' . $blog->id)
+            ->assertOk()
+            ->assertSee($blog->title)
+            ->assertSee($blog->user->name);
+    }
+
+    /** @test show*/
+    public function ブログで非公開のものは詳細画面で表示できない()
+    {
+        $blog = Blog::factory()->close()->create();
+
+        $this->get('blogs/' . $blog->id)
+            ->assertForbidden();
+    }
 }

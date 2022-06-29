@@ -33,4 +33,13 @@ class BlogFactory extends Factory
             ];
         });
     }
+
+    public function close()
+    {
+        return $this->state(function () {
+            return  [
+                'status' => Blog::CLOSED
+            ];
+        });
+    }
 }
