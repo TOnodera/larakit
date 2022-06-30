@@ -1,44 +1,39 @@
 // If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
 {
 	"name": "Existing Docker Compose (Extend)",
-
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "php",
-
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
 	"workspaceFolder": "/home/www-data/workspace",
-
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 		//インテリセンス
 		"php.executablePath": "/usr/local/bin/php",
 		//名前解決系
-		"namespaceResolver.showMessageOnStatusBar": true,  // Show message on status bar instead of notification box
-		"namespaceResolver.autoSort": true,                 // Auto sort after imports
-		"namespaceResolver.sortOnSave": true,              // Auto sort when a file is saved
-		"namespaceResolver.sortAlphabetically": true,      // Sort imports in alphabetical order instead of line length
-		"namespaceResolver.leadingSeparator": true,         // Expand class with leading namespace separator
-		"namespaceResolver.highlightOnSave": false,         // Auto highlight not imported and not used when a file is saved
-		"namespaceResolver.highlightOnOpen": false,         // Auto highlight not imported and not used when a file is opened,
+		"namespaceResolver.showMessageOnStatusBar": true, // Show message on status bar instead of notification box
+		"namespaceResolver.autoSort": true, // Auto sort after imports
+		"namespaceResolver.sortOnSave": true, // Auto sort when a file is saved
+		"namespaceResolver.sortAlphabetically": true, // Sort imports in alphabetical order instead of line length
+		"namespaceResolver.leadingSeparator": true, // Expand class with leading namespace separator
+		"namespaceResolver.highlightOnSave": false, // Auto highlight not imported and not used when a file is saved
+		"namespaceResolver.highlightOnOpen": false, // Auto highlight not imported and not used when a file is opened,
 		//コードフォーマット
 		"php-cs-fixer.onsave": true,
-		"[php]":{
+		"[php]": {
 			"editor.defaultFormatter": "junstyle.php-cs-fixer"
 		},
 		"php-cs-fixer.executablePath": "/home/www-data/workspace/app/vendor/bin/php-cs-fixer",
 		"php-cs-fixer.config": "/home/www-data/workspace/app/.php-cs-fixer.php",
 		"php-cs-fixer.autoFixBySemicolon": true
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"donjayamanne.githistory",
@@ -47,19 +42,14 @@
 		"calebporzio.better-phpunit",
 		"onecentlin.laravel-blade"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
-
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
-
 	// Uncomment the next line to run commands after the container is created - for example installing curl.
 	//"postCreateCommand": "apt-get update && apt-get install -y curl git",
-
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "www-data"
 }
