@@ -2,6 +2,8 @@
 namespace Tests\Feature\Controllers;
 
 use App\Models\Blog;
+use App\Models\Comment;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -51,13 +53,20 @@ class BlogViewControllerTest extends TestCase
     }
 
     /** @test show*/
-    public function ブログの詳細画面が表示できる()
+    public function ブログの詳細画面が表示でき、コメントが古い順に表示される()
     {
-        $blog = Blog::factory()->create();
+        $this->withoutExceptionHandling();
+        $blog = Blog::factory()->withCommentsData([
+            ['name' => '太郎3', 'created_at' => now()->sub('3 days')],
+            ['name' => '太郎2', 'created_at' => now()->sub('2 days')],
+            ['name' => '太郎1', 'created_at' => now()->sub('1 days')],
+        ])->create();
+
         $this->get('blogs/' . $blog->id)
             ->assertOk()
             ->assertSee($blog->title)
-            ->assertSee($blog->user->name);
+            ->assertSee($blog->user->name)
+            ->assertSeeInOrder(['太郎3', '太郎2', '太郎1']);
     }
 
     /** @test show*/
@@ -67,5 +76,20 @@ class BlogViewControllerTest extends TestCase
 
         $this->get('blogs/' . $blog->id)
             ->assertForbidden();
+    }
+
+    /**@test */
+    public function クリスマスの日はメリークリスマス！と表示される()
+    {
+        $blog = Blog::factory()->create();
+        Carbon::setTestNow('2022-12-24');
+        $this->get('blogs/' . $blog->id)
+            ->assertOk()
+            ->assertDontSee('メリークリスマス！');
+
+        Carbon::setTestNow('2022-12-25');
+        $this->get('blogs/' . $blog->id)
+            ->assertOk()
+            ->assertSee('メリークリスマス！');
     }
 }
